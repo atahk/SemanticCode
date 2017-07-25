@@ -2668,6 +2668,10 @@
 		<string>not_equal_2.glif</string>
 		<key>not_equal_3</key>
 		<string>not_equal_3.glif</string>
+		<key>equivalence_3</key>
+		<string>equivalence_3.glif</string>
+		<key>not_equivalence_3</key>
+		<string>not_equivalence_3.glif</string>
 		<key>LIG</key>
 		<string>L_I_G_.glif</string>
 	</dict>
