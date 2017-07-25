@@ -3212,10 +3212,10 @@
 		<string>equal_greater.glif</string>
 		<key>equal_equal_greater</key>
 		<string>equal_equal_greater.glif</string>
-		<key>equal_equal_equal</key>
-		<string>equal_equal_equal.glif</string>
-		<key>equal_equal</key>
-		<string>equal_equal.glif</string>
+		<key>equal_3</key>
+		<string>equal_3.glif</string>
+		<key>equal_2</key>
+		<string>equal_2.glif</string>
 		<key>less_bar_greater</key>
 		<string>less_bar_greater.glif</string>
 		<key>less_asterisk_greater</key>

@@ -4806,12 +4806,13 @@
 			<string>equal_less_less</string>
 			<string>equal_greater</string>
 			<string>equal_equal_greater</string>
-			<string>equal_equal_equal</string>
-			<string>equal_equal</string>
+			<string>equal_3</string>
+			<string>equal_2</string>
 			<string>less_bar_greater</string>
 			<string>less_asterisk_greater</string>
 			<string>bar_bar</string>
 			<string>less_asterisk</string>
+			<string>slash_equal_centred</string>
 			<string>slash_equal</string>
 			<string>hyphen_greater</string>
 			<string>hyphen_less</string>

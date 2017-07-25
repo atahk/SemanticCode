@@ -146,7 +146,7 @@ feature calt {
   lookup equal_equal_equal {
     ignore sub equal equal' equal equal;
     ignore sub equal' equal equal equal;
-    sub LIG LIG equal' by equal_equal_equal;
+    sub LIG LIG equal' by equal_3;
     sub LIG  equal' equal  by LIG;
     sub equal'   equal  equal  by LIG;
   } equal_equal_equal;
@@ -270,7 +270,7 @@ feature calt {
   lookup equal_equal {
     ignore sub equal equal' equal;
     ignore sub equal' equal equal;
-    sub LIG equal' by equal_equal;
+    sub LIG equal' by equal_2;
     sub equal'  equal  by LIG;
   } equal_equal;
 
