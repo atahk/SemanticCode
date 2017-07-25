@@ -1,6 +1,7 @@
 #!/bin/sh
 
-family=Hasklig
+family=SemanticCode
+languages='haskell javascript'
 romanWeights='Black Bold ExtraLight Light Medium Regular Semibold'
 italicWeights='BlackIt BoldIt ExtraLightIt LightIt MediumIt It SemiboldIt'
 
@@ -12,19 +13,31 @@ UVS=$(cd $(dirname "$0") && pwd -P)/uvs.txt
 
 # clean existing build artifacts
 rm -rf target/
-otfDir="target/"
-mkdir -p $otfDir
+rm ligatures.fea
 
-for w in $romanWeights
+for l in $languages
 do
-  makeotf -f Roman/$w/font.ufo -r -ci "$UVS" -o $otfDir/$family-$w.otf
-  rm Roman/$w/current.fpr # remove default options file from the source tree after building
-  "$addSVG" $otfDir/$family-$w.otf svg
-done
+  otfDir="target/$l/"
+  mkdir -p $otfDir
 
-for w in $italicWeights
-do
-  makeotf -f Italic/$w/font.ufo -r -ci "$UVS" -o $otfDir/$family-$w.otf
-  rm Italic/$w/current.fpr # remove default options file from the source tree after building
-  "$addSVG" $otfDir/$family-$w.otf svg
+  # copy the desired ligature definitions into place
+  cp ligatures.$l.fea ligatures.fea
+
+  for w in $romanWeights
+  do
+    outputFile=$otfDir/$family-$l-$w.otf
+    makeotf -f Roman/$w/font.ufo -r -ci "$UVS" -o $outputFile
+    rm Roman/$w/current.fpr # remove default options file from the source tree after building
+    "$addSVG" $outputFile svg
+  done
+
+  for w in $italicWeights
+  do
+    outputFile=$otfDir/$family-$l-$w.otf
+    makeotf -f Italic/$w/font.ufo -r -ci "$UVS" -o $outputFile
+    rm Italic/$w/current.fpr # remove default options file from the source tree after building
+    "$addSVG" $outputFile svg
+  done
+
+  rm ligatures.fea # remove temporary ligatures definition
 done

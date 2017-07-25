@@ -1,0 +1,83 @@
+feature calt {
+  lookup equal_equal_equal {
+    ignore sub equal equal' equal equal;
+    ignore sub equal' equal equal equal;
+    sub LIG LIG equal' by equivalence_3;
+    sub LIG  equal' equal  by LIG;
+    sub equal'   equal  equal  by LIG;
+  } equal_equal_equal;
+
+  lookup exclam_equal_equal {
+    ignore sub exclam exclam' equal equal;
+    ignore sub exclam' equal equal equal;
+    sub LIG LIG equal' by not_equivalence_3;
+    sub LIG  equal' equal  by LIG;
+    sub exclam'   equal  equal  by LIG;
+  } exclam_equal_equal;
+
+  lookup less_less_less {
+    ignore sub less less' less less;
+    ignore sub less' less less less;
+    sub LIG LIG less' by less_less_less;
+    sub LIG  less' less  by LIG;
+    sub less'   less  less  by LIG;
+  } less_less_less;
+
+  lookup greater_greater_greater {
+    ignore sub greater greater' greater greater;
+    ignore sub greater' greater greater greater;
+    sub LIG LIG greater' by greater_greater_greater;
+    sub LIG  greater' greater  by LIG;
+    sub greater'   greater  greater  by LIG;
+  } greater_greater_greater;
+
+  lookup equal_equal {
+    ignore sub equal equal' equal;
+    ignore sub equal' equal equal;
+    sub LIG equal' by equal_2;
+    sub equal'  equal  by LIG;
+  } equal_equal;
+
+  lookup exclam_equal {
+    ignore sub exclam exclam' equal;
+    ignore sub exclam' equal equal;
+    sub LIG equal' by not_equal_2;
+    sub exclam'  equal  by LIG;
+  } exclam_equal;
+
+  lookup equal_greater {
+    ignore sub equal equal' greater;
+    ignore sub equal' greater greater;
+    sub LIG greater' by equal_greater;
+    sub equal'  greater  by LIG;
+  } equal_greater;
+
+  lookup less_less {
+    ignore sub less less' less;
+    ignore sub less' less less;
+    sub LIG less' by less_less;
+    sub less'  less  by LIG;
+  } less_less;
+
+  lookup greater_greater {
+    ignore sub greater greater' greater;
+    ignore sub greater' greater greater;
+    sub LIG greater' by greater_greater;
+    sub greater'  greater  by LIG;
+  } greater_greater;
+
+  lookup plus_plus {
+    ignore sub plus plus' plus;
+    ignore sub plus' plus plus;
+    sub LIG plus' by plus_plus;
+    sub plus'  plus  by LIG;
+  } plus_plus;
+
+  lookup bar_bar {
+    ignore sub bar bar' bar;
+    ignore sub bar' bar bar;
+    sub LIG bar' by bar_bar;
+    sub bar'  bar  by LIG;
+  } bar_bar;
+
+} calt;

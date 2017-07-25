@@ -29,49 +29,49 @@
 		</source>
 	</sources>
 	<instances>
-		<instance familyname="Hasklig" filename="../Italic/ExtraLightIt/font.ufo" postscriptfontname="Hasklig-ExtraLightIt" stylename="ExtraLightIt">
+		<instance familyname="SemanticCode" filename="../Italic/ExtraLightIt/font.ufo" postscriptfontname="SemanticCode-ExtraLightIt" stylename="ExtraLightIt">
 			<location>
 				<dimension name="weight" xvalue="0.000000"/>
 			</location>
 			<kerning/>
 			<info/>
 		</instance>
-		<instance familyname="Hasklig" filename="../Italic/LightIt/font.ufo" postscriptfontname="Hasklig-LightIt" stylename="LightIt">
+		<instance familyname="SemanticCode" filename="../Italic/LightIt/font.ufo" postscriptfontname="SemanticCode-LightIt" stylename="LightIt">
 			<location>
 				<dimension name="weight" xvalue="100.000000"/>
 			</location>
 			<kerning/>
 			<info/>
 		</instance>
-		<instance familyname="Hasklig" filename="../Italic/It/font.ufo" postscriptfontname="Hasklig-It" stylename="It">
+		<instance familyname="SemanticCode" filename="../Italic/It/font.ufo" postscriptfontname="SemanticCode-It" stylename="It">
 			<location>
 				<dimension name="weight" xvalue="368.000000"/>
 			</location>
 			<kerning/>
 			<info/>
 		</instance>
-		<instance familyname="Hasklig" filename="../Italic/MediumIt/font.ufo" postscriptfontname="Hasklig-MediumIt" stylename="MediumIt">
+		<instance familyname="SemanticCode" filename="../Italic/MediumIt/font.ufo" postscriptfontname="SemanticCode-MediumIt" stylename="MediumIt">
 			<location>
 				<dimension name="weight" xvalue="486.000000"/>
 			</location>
 			<kerning/>
 			<info/>
 		</instance>
-		<instance familyname="Hasklig" filename="../Italic/SemiboldIt/font.ufo" postscriptfontname="Hasklig-SemiboldIt" stylename="SemiboldIt">
+		<instance familyname="SemanticCode" filename="../Italic/SemiboldIt/font.ufo" postscriptfontname="SemanticCode-SemiboldIt" stylename="SemiboldIt">
 			<location>
 				<dimension name="weight" xvalue="600.000000"/>
 			</location>
 			<kerning/>
 			<info/>
 		</instance>
-		<instance familyname="Hasklig" filename="../Italic/BoldIt/font.ufo" postscriptfontname="Hasklig-BoldIt" stylename="BoldIt">
+		<instance familyname="SemanticCode" filename="../Italic/BoldIt/font.ufo" postscriptfontname="SemanticCode-BoldIt" stylename="BoldIt">
 			<location>
 				<dimension name="weight" xvalue="824.000000"/>
 			</location>
 			<kerning/>
 			<info/>
 		</instance>
-		<instance familyname="Hasklig" filename="../Italic/BlackIt/font.ufo" postscriptfontname="Hasklig-BlackIt" stylename="BlackIt">
+		<instance familyname="SemanticCode" filename="../Italic/BlackIt/font.ufo" postscriptfontname="SemanticCode-BlackIt" stylename="BlackIt">
 			<location>
 				<dimension name="weight" xvalue="1000.000000"/>
 			</location>
