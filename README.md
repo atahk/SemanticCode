@@ -27,6 +27,8 @@ For example, in the SemanticHaskell variant SemanticCode has a glyph for `/=` wi
 + forked version
     + Added R, C++ and a combination of the two
 	+ Added inequalities `<=` and `>=`
+	+ Fixed build from scratch
+	+ Added Makefile
 + v2.2
     + The entire build system is now written in python
     + Build system improvements means each variant is called `Semantic<Language>` 

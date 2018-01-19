@@ -6,6 +6,7 @@ import errno
 import os
 import shutil
 import subprocess
+import argparse
 
 import dill
 
@@ -40,10 +41,17 @@ def rm_rf(path):
 
 if __name__ == "__main__":
 
-    rm_rf("target/")
+    parser = argparse.ArgumentParser(description='Build font files')
+    parser.add_argument('-t', '--target', metavar='dir', type=str,
+                        default='target', required=False,
+                        help='target directory for font files')
+    args = parser.parse_args()
+    target = os.path.expanduser(args.target).rstrip("/")
+
+    rm_rf(target+"/")
 
     for full_name, short_name in CONFIG["LANGUAGES"]:
-        otf_dir = "target/%s/" % short_name
+        otf_dir = "%s/%s/" % (target, short_name)
         mkdir_p(otf_dir)
 
         family_name = "Semantic%s" % full_name
