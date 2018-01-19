@@ -3266,6 +3266,10 @@
 		<string>equivalence_3.glif</string>
 		<key>not_equivalence_3</key>
 		<string>not_equivalence_3.glif</string>
+		<key>less_inequality</key>
+		<string>less_inequality.glif</string>
+		<key>greater_inequality</key>
+		<string>greater_inequality.glif</string>
 		<key>LIG</key>
 		<string>L_I_G_.glif</string>
 	</dict>

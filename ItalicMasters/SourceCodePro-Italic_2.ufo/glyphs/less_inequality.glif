@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="less_inequality" format="1">
+  <advance width="600"/>
+  <outline>
+    <contour>
+      <point x="368" y="0" type="line"/>
+      <point x="-368" y="0" type="line"/>
+      <point x="-368" y="75" type="line"/>
+      <point x="368" y="75" type="line"/>
+    </contour>
+    <contour>
+      <point x="-368" y="432" type="line"/>
+      <point x="368" y="633" type="line"/>
+      <point x="368" y="552" type="line"/>
+      <point x="-210" y="395" type="line"/>
+      <point x="-210" y="392" type="line"/>
+      <point x="368" y="230" type="line"/>
+      <point x="368" y="155" type="line"/>
+      <point x="-368" y="356" type="line"/>
+    </contour>
+  </outline>
+</glyph>

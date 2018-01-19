@@ -2,7 +2,7 @@ _N.B. This is a fork of the_ [Hasklig repository](https://github.com/i-tu/Haskli
 
 ### SemanticCode – _Ligatures for code_
 
-Inspired by the excellent Hasklig font, SemanticCode is a modification of Hasklig (and by extension, Source Code Pro) to cover ligatures for a variety of programming languages. 
+This is a fork of SemanticCode to cover R, C++, Python and Julia. SemanticCode is a modification of Hasklig (and by extension, Source Code Pro) to cover ligatures for a variety of programming languages. 
 
 The main idea is to substitute operators which have a multi-character representation, such as `!=` and `->`, with more readable equivalents that have the same semantic meaning, and the same width. 
 For example, in languages where `!=` represents 'not equal' we show a glyph corresponding to a slashed equal sign that is two characters wide. 
@@ -13,19 +13,20 @@ Firstly, versions of the font are available for different programming languages,
 Secondly, the ligatures themselves are intended to correspond more closely to the _semantic meaning_ of the operator than the multi-character representation. 
 For example, in the SemanticHaskell variant SemanticCode has a glyph for `/=` with the slash centred, whereas the Hasklig glyph has the slash toward the left, as in the multi-character representation.
 
-[**Download SemanticCode Font Family**](https://github.com/ed359/SemanticCode/releases)
-
-### Examples
-
-_Not available yet_
-
 ### TODO
 
-+ add more programming languages (pull requests welcome)
-+ add proper <= and >= glyphs
-+ fix the discrepancy between the glyphs for <|> and <|, |>
++ add C++ comment glyphs `//`, `/*`, `*/`
++ add R comment glyph `##`
++ add R glyphs `<<-` and `%in%`
++ add R glyphs `%%`, `%*%`, `%/%`, `%o%`, `%x%`, `%+%` and `%-%`
++ add C++ operator glyphs `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `|=`, `^=`, `<<=` and `>>=`
++ add Python
++ add Julia
 
 ### Release notes
++ forked version
+    + Added R, C++ and a combination of the two
+	+ Added inequalities `<=` and `>=`
 + v2.2
     + The entire build system is now written in python
     + Build system improvements means each variant is called `Semantic<Language>` 
