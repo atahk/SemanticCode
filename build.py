@@ -40,10 +40,6 @@ def rm_rf(path):
 
 if __name__ == "__main__":
 
-    if CONFIG["BUILD_INSTANCES"]:
-        subprocess.call(["makeInstancesUFO", "-d", "RomanMasters/SourceCodePro.designspace"])
-        subprocess.call(["makeInstancesUFO", "-d", "ItalicMasters/SourceCodePro-It.designspace"])
-
     rm_rf("target/")
 
     for full_name, short_name in CONFIG["LANGUAGES"]:

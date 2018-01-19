@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # pylint: disable=I0011,C0103,C0326
 
-import argparse
 import os.path
-
+import shutil
 import dill
 
 # Languages are a tuple with a full name and a short name.
-LANGUAGES = [("Haskell", "hs"), ("Javascript", "js"), ("MATLAB", "m")]
+# LANGUAGES = [("Haskell", "hs"), ("Javascript", "js"), ("MATLAB", "m")]
+LANGUAGES = [("Cpp", "cpp"), ("R", "r"), ("Rcpp", "rcpp")]
 
 # The ligatures dict associated to each language full name a list of substitution tuples.
 # A substitution tuple consists of a tuple of glyph names to match, a function from the
@@ -73,8 +73,44 @@ LIGATURES = {
         (("plus",       "plus"),                "_".join, "")],
     "MATLAB": [
         (("equal",      "equal"),               lambda xs: "equal_2",     ""),
-        (("asciitilde", "equal"),               lambda xs: "not_equal_2", ""),
-    ],
+        (("asciitilde", "equal"),               lambda xs: "not_equal_2", "")],
+    "Cpp": [
+        (("hyphen",     "greater"),             "_".join, ""),
+        (("less",       "hyphen"),              "_".join, ""),
+        (("colon",      "colon"),               "_".join, ""),
+        (("bar",        "bar"),                 "_".join, ""),
+        (("equal",      "equal"),               lambda xs: "equal_2", ""),
+        (("exclam",     "equal"),               lambda xs: "not_equal_2", ""),
+        (("greater",    "greater"),             "_".join, ""),
+        (("less",       "less"),                "_".join, ""),
+        (("plus",       "plus"),                "_".join, "")],
+    "R": [
+        (("period",     "period",   "period"),  "_".join, ""),
+        (("hyphen",     "greater"),             "_".join, ""),
+        (("less",       "hyphen"),              "_".join, ""),
+        (("colon",      "colon",    "colon"),   "_".join, ""),
+        (("colon",      "colon"),               "_".join, ""),
+        (("bar",        "bar"),                 "_".join, ""),
+        (("equal",      "equal"),               lambda xs: "equal_2", ""),
+        (("exclam",     "equal"),               lambda xs: "not_equal_2", "")],
+    "Rcpp": [
+        (("period",     "period",   "period"),  "_".join, ""),
+        (("hyphen",     "greater"),             "_".join, ""),
+        (("less",       "hyphen"),              "_".join, ""),
+#        (("less",       "equal"),               lambda xs: "lessequal_2", ""),
+#        (("greater"     "equal"),               lambda xs: "greaterequal_2", ""),
+        (("less",       "equal",    "greater"), "_".join, ""),
+        (("colon",      "colon",    "colon"),   "_".join, ""),
+        (("colon",      "colon"),               "_".join, ""),
+        (("bar",        "bar"),                 "_".join, ""),
+        (("equal",      "equal",    "equal"),   lambda xs: "equivalence_3", ""),
+        (("exclam",     "equal",    "equal"),   lambda xs: "not_equivalence_3", ""),
+        (("equal",      "equal"),               lambda xs: "equal_2", ""),
+        (("equal",      "greater"),             "_".join, ""),
+        (("exclam",     "equal"),               lambda xs: "not_equal_2", ""),
+        (("greater",    "greater"),             "_".join, ""),
+        (("less",       "less"),                "_".join, ""),
+        (("plus",       "plus"),                "_".join, "")],
 }
 
 # Unused ignores from Hasklig:
@@ -136,10 +172,9 @@ def to_rule(substitution_tuple):
     return rule
 
 
-def generate_config_file(languages, build_instances):
+def generate_config_file(languages):
     with open('config.dill', 'w') as f:
-        dill.dump({"BUILD_INSTANCES": build_instances,
-                   "LANGUAGES": languages,
+        dill.dump({"LANGUAGES": languages,
                    "LIGATURES": LIGATURES,
                    "ITALIC_WEIGHTS": ITALIC_WEIGHTS,
                    "ROMAN_WEIGHTS": ROMAN_WEIGHTS,
@@ -155,8 +190,13 @@ def generate_ligature_files(languages):
 
 
 def generate_fontinfo_files(languages):
+    fontinfo_file = "fontinfo.plist"
+    generic_file = "fontinfo.generic.plist"
     for weight in ROMAN_WEIGHTS:
-        generic_info_file = "Roman/%s/font.ufo/fontinfo.generic.plist" % weight
+        generic_info_file = "Roman/%s/font.ufo/%s" % (weight, generic_file)
+        if not os.path.exists(generic_info_file):
+            basic_info_file = "Roman/%s/font.ufo/%s" % (weight, fontinfo_file)
+            shutil.copy(basic_info_file, generic_info_file)
         with open(generic_info_file, 'r') as f:
             generic_info = f.read()
 
@@ -166,7 +206,10 @@ def generate_fontinfo_files(languages):
                 f.write(generic_info.replace("SemanticCode", "Semantic%s" % full_name))
 
     for weight in ITALIC_WEIGHTS:
-        generic_info_file = "Italic/%s/font.ufo/fontinfo.generic.plist" % weight
+        generic_info_file = "Italic/%s/font.ufo/%s" % (weight, generic_file)
+        if not os.path.exists(generic_info_file):
+            basic_info_file = "Italic/%s/font.ufo/%s" % (weight, fontinfo_file)
+            shutil.copy(basic_info_file, generic_info_file)
         with open(generic_info_file, 'r') as f:
             generic_info = f.read()
 
@@ -187,22 +230,12 @@ def generate_fontmenunamedbs(languages):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-bi", "--build-instances",
-                        help="force building of all weights from master",
-                        action="store_true")
-    args = parser.parse_args()
-
     enabled = LANGUAGES
 
-    if not os.path.exists('Roman/Black/font.ufo'):
-        args.build_instances = True
-
     print "Configuring Semantic Fonts..."
-    print "    Building instances from master weights: %s" % str(args.build_instances)
     print "    Languages enabled: %s" % ", ".join([fn for fn, sn in enabled])
 
-    generate_config_file(enabled, args.build_instances)
+    generate_config_file(enabled)
     generate_fontinfo_files(enabled)
     generate_fontmenunamedbs(enabled)
     generate_ligature_files(enabled)
