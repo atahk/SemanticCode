@@ -76,7 +76,7 @@ LIGATURES = {
         (("asciitilde", "equal"),               lambda xs: "not_equal_2", "")],
     "Cpp": [
         (("less",       "equal"),               lambda xs: "less_inequality", ""),
-        (("greater"     "equal"),               lambda xs: "greater_inequality", ""),
+        (("greater",    "equal"),               lambda xs: "greater_inequality", ""),
         (("ampersand",  "ampersand"),           "_".join, ""),
         (("hyphen",     "greater"),             "_".join, ""),
         (("less",       "hyphen"),              "_".join, ""),
@@ -88,30 +88,30 @@ LIGATURES = {
         (("less",       "less"),                "_".join, ""),
         (("plus",       "plus"),                "_".join, "")],
     "R": [
-        (("less",       "equal"),               lambda xs: "less_inequality", ""),
-        (("greater"     "equal"),               lambda xs: "greater_inequality", ""),
-        (("ampersand",  "ampersand"),           "_".join, ""),
         (("period",     "period",   "period"),  "_".join, ""),
+        (("colon",      "colon",    "colon"),   "_".join, ""),
+        (("less",       "equal"),               lambda xs: "less_inequality", ""),
+        (("greater",    "equal"),               lambda xs: "greater_inequality", ""),
+        (("ampersand",  "ampersand"),           "_".join, ""),
         (("hyphen",     "greater"),             "_".join, ""),
         (("less",       "hyphen"),              "_".join, ""),
-        (("colon",      "colon",    "colon"),   "_".join, ""),
         (("colon",      "colon"),               "_".join, ""),
         (("bar",        "bar"),                 "_".join, ""),
         (("equal",      "equal"),               lambda xs: "equal_2", ""),
         (("exclam",     "equal"),               lambda xs: "not_equal_2", "")],
     "Rcpp": [
-        (("less",       "equal"),               lambda xs: "less_inequality", ""),
-        (("greater"     "equal"),               lambda xs: "greater_inequality", ""),
-        (("ampersand",  "ampersand"),           "_".join, ""),
-        (("period",     "period",   "period"),  "_".join, ""),
-        (("hyphen",     "greater"),             "_".join, ""),
-        (("less",       "hyphen"),              "_".join, ""),
-        (("less",       "equal",    "greater"), "_".join, ""),
-        (("colon",      "colon",    "colon"),   "_".join, ""),
-        (("colon",      "colon"),               "_".join, ""),
-        (("bar",        "bar"),                 "_".join, ""),
         (("equal",      "equal",    "equal"),   lambda xs: "equivalence_3", ""),
         (("exclam",     "equal",    "equal"),   lambda xs: "not_equivalence_3", ""),
+        (("period",     "period",   "period"),  "_".join, ""),
+        (("colon",      "colon",    "colon"),   "_".join, ""),
+        (("less",       "equal",    "greater"), "_".join, ""),
+        (("less",       "equal"),               lambda xs: "less_inequality", ""),
+        (("greater",    "equal"),               lambda xs: "greater_inequality", ""),
+        (("ampersand",  "ampersand"),           "_".join, ""),
+        (("hyphen",     "greater"),             "_".join, ""),
+        (("less",       "hyphen"),              "_".join, ""),
+        (("colon",      "colon"),               "_".join, ""),
+        (("bar",        "bar"),                 "_".join, ""),
         (("equal",      "equal"),               lambda xs: "equal_2", ""),
         (("equal",      "greater"),             "_".join, ""),
         (("exclam",     "equal"),               lambda xs: "not_equal_2", ""),
@@ -139,7 +139,7 @@ def to_rule(substitution_tuple):
     glyphs, replace_function, ignores = substitution_tuple
     length = len(glyphs)
     rule = ""
-
+        
     # the rule starts out as a template with 0 standing for the combined glyph
     # and 1.. standing for the individual glyphs that are replaced
     if length == 2:
