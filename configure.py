@@ -90,6 +90,7 @@ LIGATURES = {
     "R": [
         (("period",     "period",   "period"),  "_".join, ""),
         (("colon",      "colon",    "colon"),   "_".join, ""),
+        (("less",       "less",     "hyphen"),  "_".join, ""),
         (("less",       "equal"),               lambda xs: "less_inequality", ""),
         (("greater",    "equal"),               lambda xs: "greater_inequality", ""),
         (("ampersand",  "ampersand"),           "_".join, ""),
@@ -105,6 +106,7 @@ LIGATURES = {
         (("period",     "period",   "period"),  "_".join, ""),
         (("colon",      "colon",    "colon"),   "_".join, ""),
         (("less",       "equal",    "greater"), "_".join, ""),
+        (("less",       "less",     "hyphen"),  "_".join, ""),
         (("less",       "equal"),               lambda xs: "less_inequality", ""),
         (("greater",    "equal"),               lambda xs: "greater_inequality", ""),
         (("ampersand",  "ampersand"),           "_".join, ""),

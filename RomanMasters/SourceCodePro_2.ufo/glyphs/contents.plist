@@ -3270,6 +3270,8 @@
 		<string>less_inequality.glif</string>
 		<key>greater_inequality</key>
 		<string>greater_inequality.glif</string>
+		<key>less_less_hyphen</key>
+		<string>less_less_hyphen.glif</string>
 		<key>LIG</key>
 		<string>L_I_G_.glif</string>
 	</dict>
