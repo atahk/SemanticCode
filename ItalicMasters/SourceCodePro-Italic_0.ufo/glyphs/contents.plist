@@ -2678,6 +2678,12 @@
 		<string>greater_inequality.glif</string>
 		<key>less_less_hyphen</key>
 		<string>less_less_hyphen.glif</string>
+		<key>slash_slash</key>
+		<string>slash_slash.glif</string>
+		<key>slash_asterisk</key>
+		<string>slash_asterisk.glif</string>
+		<key>asterisk_slash</key>
+		<string>asterisk_slash.glif</string>
 		<key>LIG</key>
 		<string>L_I_G_.glif</string>
 	</dict>
