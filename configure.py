@@ -101,6 +101,7 @@ LIGATURES = {
         (("less",       "hyphen"),              "_".join, ""),
         (("colon",      "colon"),               "_".join, ""),
         (("bar",        "bar"),                 "_".join, ""),
+        (("numbersign", "numbersign"),          "_".join, ""),
         (("equal",      "equal"),               lambda xs: "equal_2", ""),
         (("exclam",     "equal"),               lambda xs: "not_equal_2", "")],
     "Rcpp": [
@@ -117,6 +118,7 @@ LIGATURES = {
         (("less",       "hyphen"),              "_".join, ""),
         (("colon",      "colon"),               "_".join, ""),
         (("bar",        "bar"),                 "_".join, ""),
+        (("numbersign", "numbersign"),          "_".join, ""),
         (("slash",      "slash"),               "_".join, ""),
         (("slash",      "asterisk"),            "_".join, ""),
         (("asterisk",   "slash"),               "_".join, ""),

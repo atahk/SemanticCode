@@ -15,7 +15,6 @@ For example, in the SemanticHaskell variant SemanticCode has a glyph for `/=` wi
 
 ### TODO
 
-+ add R comment glyph `##`
 + add R glyph `%in%`
 + improve R glyph `<<-` and C++ glyph `<<`
 + add R glyphs `%%`, `%*%`, `%/%`, `%o%`, `%x%`, `%+%` and `%-%`
@@ -25,12 +24,13 @@ For example, in the SemanticHaskell variant SemanticCode has a glyph for `/=` wi
 
 ### Release notes
 + forked version
-    + Added R, C++ and a combination of the two
-	+ Added inequalities `<=` and `>=`
+    + added R, C++ and a combination of the two
+	+ added inequalities `<=` and `>=`
+	+ added R comment glyph `##`
 	+ added C++ comment glyphs `//`, `/*`, `*/`
 	+ added R glyph `<<-`
-	+ Fixed build from scratch
-	+ Added Makefile
+	+ fixed build from scratch
+	+ added Makefile
 + v2.2
     + The entire build system is now written in python
     + Build system improvements means each variant is called `Semantic<Language>` 
