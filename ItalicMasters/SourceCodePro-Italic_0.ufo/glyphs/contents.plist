@@ -2684,6 +2684,8 @@
 		<string>slash_asterisk.glif</string>
 		<key>asterisk_slash</key>
 		<string>asterisk_slash.glif</string>
+		<key>numbersign_numbersign</key>
+		<string>numbersign_numbersign.glif</string>
 		<key>LIG</key>
 		<string>L_I_G_.glif</string>
 	</dict>
