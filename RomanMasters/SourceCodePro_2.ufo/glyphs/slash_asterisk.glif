@@ -2,7 +2,7 @@
 <glyph name="slash_asterisk" format="1">
 	<advance width="600"/>
 	<outline>
-		<component base="asterisk" xOffset="-450"/>
-		<component base="slash" xOffset="-150"/>
+		<component base="asterisk" xOffset="-150"/>
+		<component base="slash" xOffset="-450"/>
 	</outline>
 </glyph>
