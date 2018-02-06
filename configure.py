@@ -111,6 +111,7 @@ LIGATURES = {
         (("colon",      "colon",    "colon"),   "_".join, ""),
         (("less",       "equal",    "greater"), "_".join, ""),
         (("less",       "less",     "hyphen"),  "_".join, ""),
+        (("asciitilde", "equal"),               lambda xs: "approx_2", "")],
         (("less",       "equal"),               lambda xs: "less_inequality", ""),
         (("greater",    "equal"),               lambda xs: "greater_inequality", ""),
         (("ampersand",  "ampersand"),           "_".join, ""),
