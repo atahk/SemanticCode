@@ -2686,6 +2686,12 @@
 		<string>asterisk_slash.glif</string>
 		<key>numbersign_numbersign</key>
 		<string>numbersign_numbersign.glif</string>
+		<key>equivalence_2</key>
+		<string>equivalence_2.glif</string>
+		<key>not_equivalence_2</key>
+		<string>not_equivalence_2.glif</string>
+		<key>approx_2</key>
+		<string>approx_2.glif</string>
 		<key>LIG</key>
 		<string>L_I_G_.glif</string>
 	</dict>
